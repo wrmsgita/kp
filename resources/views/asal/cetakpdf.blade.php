@@ -8,7 +8,7 @@
 
 <body>
 	<center>
-		<h1>Laporan Data Asal</h1>
+		<h1>Laporan Data Asal p</h1>
 	</center>
   <table border="1" cellpadding="10" cellspacing="5" width="100%">
     <thead>
