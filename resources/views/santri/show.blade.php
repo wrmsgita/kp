@@ -31,9 +31,9 @@ $nama2=\App\Kategori::where('id',$santri ->kategori_id)->first();
           <label for="materialSubscriptionFormPasswords">Id</label>
         </div>
         <div class="md-form">
-          <input type="text" value="{{$santri ->nis}}" disabled name="nip" id="materialSubscriptionFormEmail"
+          <input type="text" value="{{$santri ->nokk}}" disabled name="nip" id="materialSubscriptionFormEmail"
             class="form-control">
-          <label for="materialSubscriptionFormEmail">Nisn</label>
+          <label for="materialSubscriptionFormEmail">NIK</label>
         </div>
         <div class="md-form">
           <input type="text" value="{{$santri ->nama}}" disabled name="nama" id="materialSubscriptionFormEmail"
@@ -51,15 +51,15 @@ $nama2=\App\Kategori::where('id',$santri ->kategori_id)->first();
             id="date-picker-example" class="form-control datepicker">
         </div>
         <div class="md-form">
-            <input type="text" value="{{$nama ->nama}}" disabled name="tempat" id="materialSubscriptionFormEmail"
-              class="form-control">
-            <label for="materialSubscriptionFormEmail">Asal</label>
-          </div>
+          <input type="text" value="{{$nama ->nama}}" disabled name="tempat" id="materialSubscriptionFormEmail"
+            class="form-control">
+          <label for="materialSubscriptionFormEmail">Asal</label>
+        </div>
         <div class="md-form">
-            <input type="text" value="{{$nama2 ->nama}}" disabled name="tempat" id="materialSubscriptionFormEmail"
-              class="form-control">
-            <label for="materialSubscriptionFormEmail">Kategori</label>
-          </div>
+          <input type="text" value="{{$nama2 ->nama}}" disabled name="tempat" id="materialSubscriptionFormEmail"
+            class="form-control">
+          <label for="materialSubscriptionFormEmail">Kategori</label>
+        </div>
         <div class="md-form">
           <textarea name="alamat" id="form7" disabled class="md-textarea form-control"
             rows="3">{{$santri ->alamat}}</textarea>

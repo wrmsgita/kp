@@ -37,7 +37,7 @@ $kategori = App\kategori::all();
       <!-- E-mai -->
       <div class="md-form">
         <input type="text" name="nis" id="materialSubscriptionFormEmail" class="form-control" autofocus>
-        <label for="materialSubscriptionFormEmail">Nis</label>
+        <label for="materialSubscriptionFormEmail">No. KK</label>
       </div>
 
       <!-- E-mai -->

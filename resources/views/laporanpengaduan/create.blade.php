@@ -2,7 +2,7 @@
 
 @php
 $jenis = App\Jenis::all();
-$santri = App\Santri::all();
+// $santri = App\Pengguna::all();
 @endphp
 
 @section('content')
@@ -50,7 +50,7 @@ $santri = App\Santri::all();
 
             <div class="md-form">
               <textarea rows="3" name="keterangan" id="materialContactFormMessage" class="form-control md-textarea"
-              value="{{ old('keterangan')}}" autofocus required></textarea>
+                value="{{ old('keterangan')}}" autofocus required></textarea>
 
               <label for="materialContactFormMessage">Ketik Pengaduan Anda...</label>
             </div>
@@ -58,7 +58,7 @@ $santri = App\Santri::all();
             <select name="jenis" class="mdb-select md-form colorful-select dropdown-danger" required>
               <option value="{{ old('jenis')}}"" disabled selected>Jenis Pengaduan</option>
               @foreach ($jenis as $j)
-              <option value="{{$j ->id}}">{{$j ->nama}}</option>
+              <option value=" {{$j ->id}}">{{$j ->nama}}</option>
               @endforeach
             </select>
 
@@ -68,7 +68,7 @@ $santri = App\Santri::all();
               <option value="" disabled selected>Nama Santri</option>
               @foreach ($santri as $s)
               <option value="{{$s ->id}}">{{$s ->nama}}</option>
-            @endforeach
+              @endforeach
             </select> --}}
 
             <!--/Blue select-->
@@ -76,11 +76,11 @@ $santri = App\Santri::all();
             <div class="md-form">
               <input placeholder="Plih Tanggal..." name="tanggal" type="date" id="date-picker-example"
                 class="form-control datepicker @error('tanggal') is-invalid @enderror" value="{{ old('tanggal')}}">
-                @error('tanggal')
-                <div class="invalid-feedback">
-                    {{$message}}
-                </div>
-                @enderror
+              @error('tanggal')
+              <div class="invalid-feedback">
+                {{$message}}
+              </div>
+              @enderror
             </div>
 
             <!--Message-->

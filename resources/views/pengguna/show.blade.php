@@ -31,9 +31,9 @@
                     <label for="materialSubscriptionFormEmail">Nama</label>
                 </div>
                 <div class="md-form">
-                    <input type="text" value="{{$pengguna ->nisn}}" disabled name="nip" id="materialSubscriptionFormEmail"
+                    <input type="text" value="{{$pengguna ->nik}}" disabled name="nip" id="materialSubscriptionFormEmail"
                         class="form-control">
-                    <label for="materialSubscriptionFormEmail">Nisn</label>
+                    <label for="materialSubscriptionFormEmail">NIK</label>
                 </div>
                 <div class="md-form">
                     <input type="text" value="{{$pengguna ->email}}" disabled name="nama" id="materialSubscriptionFormEmail"

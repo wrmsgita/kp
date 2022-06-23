@@ -9,21 +9,22 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
-<link href="{{('mdbpro/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{('mdbpro/css/bootstrap.min.css')}}" rel="stylesheet">
   <!-- Material Design Bootstrap -->
-<link href="{{('mdbpro/css/mdb.min.css')}}" rel="stylesheet">
+  <link href="{{('mdbpro/css/mdb.min.css')}}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-<link href="{{('mdbpro/css/bgstyle.css')}}" rel="stylesheet">
+  <link href="{{('mdbpro/css/bgstyle.css')}}" rel="stylesheet">
 </head>
 
-<body> 
- <!-- Main navigation -->
-<header>
+<body>
+  <!-- Main navigation -->
+  <header>
     <!-- Navbar -->
-    
+
     <!-- Navbar -->
     <!-- Full Page Intro -->
-    <div class="view" style="background-image: url('https://i.pinimg.com/originals/90/58/9c/90589c53510ce2c39e3f37625445f2be.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="view"
+      style="background-image: url('https://i.pinimg.com/originals/90/58/9c/90589c53510ce2c39e3f37625445f2be.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
       <!-- Mask & flexbox options-->
       <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
         <!-- Content -->
@@ -34,7 +35,9 @@
             <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
               <h1 class="h1-responsive font-weight-bold wow fadeInLeft" data-wow-delay="0.3s">Aplikasi Pengaduan </h1>
               <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-              <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eligendi qui. Nostrum, harum. Sequi ad optio quia nemo laudantium est, ab voluptatibus quibusdam non quas consectetur minus. Reiciendis, voluptate tenetur?</h6>
+              <h6 class="mb-3 wow fadeInLeft" data-wow-delay="0.3s">Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Magnam, eligendi qui. Nostrum, harum. Sequi ad optio quia nemo laudantium est, ab voluptatibus
+                quibusdam non quas consectetur minus. Reiciendis, voluptate tenetur?</h6>
               <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s">Learn more</a>
             </div>
             <!--Grid column-->
@@ -46,7 +49,8 @@
                   <!--Header-->
                   <div class="text-center">
                     <h3 class="white-text">
-                      <i class="fa fa-user white-text"></i> Register:</h3>
+                      <i class="fa fa-user white-text"></i> Register:
+                    </h3>
                     <hr class="hr-light">
                   </div>
                   <!--Body-->
@@ -104,13 +108,13 @@
   <!--Main Layout-->
   <!-- SCRIPTS -->
   <!-- JQuery -->
-<script type="text/javascript" src="{{('mdbpro/js/jquery-3.4.1.min.js')}}"></script>
+  <script type="text/javascript" src="{{('mdbpro/js/jquery-3.4.1.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
-<script type="text/javascript" src="{{('mdbpro/js/popper.min.js')}}"></script>
+  <script type="text/javascript" src="{{('mdbpro/js/popper.min.js')}}"></script>
   <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="{{('mdbpro/js/bootstrap.min.js')}}"></script>
+  <script type="text/javascript" src="{{('mdbpro/js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-<script type="text/javascript" src="{{('mdbpro/js/mdb.min.js')}}"></script>
+  <script type="text/javascript" src="{{('mdbpro/js/mdb.min.js')}}"></script>
 </body>
 
 </html>

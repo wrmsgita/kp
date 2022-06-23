@@ -25,11 +25,11 @@ class Pengaduan1Controller extends Controller
         $pengaduan = DB::table('pengaduan')
             ->join('jenis', 'pengaduan.jenis_pengaduan_id', '=', 'jenis.id')
             ->join('users', 'pengaduan.users_id', '=', 'users.id')
-            ->select('pengaduan.*', 'pengaduan.id','jenis.nama AS namajenis','users.name AS namausers','pengaduan.tgl_pengaduan','pengaduan.keterangan','pengaduan.status','pengaduan.bukti')->where('users.id', '=', $user)->get();          
+            ->select('pengaduan.*', 'pengaduan.id', 'jenis.nama AS namajenis', 'users.name AS namausers', 'pengaduan.tgl_pengaduan', 'pengaduan.keterangan', 'pengaduan.status', 'pengaduan.bukti')->where('users.id', '=', $user)->get();
         return view('pengaduansaya.index', compact('pengaduan'));
     }
 
-   
+
     /**
      * Show the form for creating a new resource.
      *
@@ -93,7 +93,7 @@ class Pengaduan1Controller extends Controller
             $namaFile = time() . '.' . request()->foto->extension();
             request()->foto->move(public_path('img'), $namaFile);
         } else {
-            $namaFile = $gambar ->bukti;
+            $namaFile = $gambar->bukti;
         }
         DB::table('pengaduan')->where('id', $id)->update([
             'jenis_pengaduan_id' => $request->jenis,
@@ -118,6 +118,6 @@ class Pengaduan1Controller extends Controller
     public function destroy($id)
     {
         DB::table('pengaduan')->where('id', $id)->delete();
-        return redirect('/pengaduan1')->with('sukses', 'Data berhasil dihapus');   
+        return redirect('/pengaduan1')->with('sukses', 'Data berhasil dihapus');
     }
 }

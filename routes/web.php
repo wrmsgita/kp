@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/beranda', function () {
     return view('beranda');
 })->middleware('auth');
+
 Route::get('/carapengunaan', function () {
     return view('cara');
 })->middleware('auth');
@@ -122,6 +123,7 @@ Route::group(['middleware' => ['auth', 'checkRole:Admin']], function () {
     Route::get('pengaduanexcel', 'PengaduanController@excel');
     Route::get('pengaduanpdf', 'PengaduanController@pdf');
 });
+
 Route::group(['middleware' => ['auth', 'checkRole:Ustadz,Admin']], function () {
     Route::resource('asal', 'AsalController');
     Route::get('/asal/{id}/delete', 'AsalController@destroy');

@@ -1,7 +1,7 @@
 @php
 $totalpengaduan = DB::table('pengaduan')->count();
 $totaluser = DB::table('users')->count();
-$totalustadz = DB::table('ustadz')->count();
+$totalustadz = DB::table('pengurus')->count();
 $totalpengaduansudah = DB::table('pengaduan')->where('status', '=', 'Diterima')->count();
 $totalpengaduantolak = DB::table('pengaduan')->where('status', '=', 'Ditolak')->count();
 $totalpengaduandiproses = DB::table('pengaduan')->where('status', '=', 'Diproses')->count();
@@ -13,7 +13,7 @@ $totalpengaduandiproses = DB::table('pengaduan')->where('status', '=', 'Diproses
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta content='#222' name='theme-color'/>
+  <meta content='#222' name='theme-color' />
   <link rel="icon" type="image/png" sizes="16x16" href="{{asset('img/logofavicon.png')}}">
   <title>Aplikasi Penggaduan Santri</title>
   <!-- Font Awesome -->
@@ -27,9 +27,6 @@ $totalpengaduandiproses = DB::table('pengaduan')->where('status', '=', 'Diproses
   <!-- Material Design Bootstrap -->
   <link href="{{asset('mdbpro/css/mdb.css')}}" rel="stylesheet">
   <link href="{{asset('mdbpro/css/style.css')}}" rel="stylesheet">
-
-
-
 </head>
 
 
@@ -67,9 +64,9 @@ $totalpengaduandiproses = DB::table('pengaduan')->where('status', '=', 'Diproses
 <script type="text/javascript" src="{{asset('sweetalert2/package/dist/sweetalert2.all.min.js')}}"></script>
 <script>
   new WOW().init();
-  </script>
+</script>
 <script>
-//bar
+  //bar
 var ctxB = document.getElementById("barChart").getContext('2d');
 var myBarChart = new Chart(ctxB, {
 type: 'bar',
@@ -109,7 +106,7 @@ beginAtZero: true
 });
 </script>
 <script>
-(function() {
+  (function() {
 'use strict';
 window.addEventListener('load', function() {
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -206,7 +203,7 @@ $('.mdb-select').materialSelect();
 	});
 </script>
 <script>
- $(document).ready(function () {
+  $(document).ready(function () {
 $('#datatable1').DataTable({
 "order": [[ 0, "desc" ]]
 });
@@ -214,7 +211,7 @@ $('.dataTables_length').addClass('bs-select');
 });
 </script>
 <script>
- $(document).ready(function () {
+  $(document).ready(function () {
 $('#datatable2').DataTable({
 "order": [[ 0, "desc" ]]
 });
@@ -222,7 +219,7 @@ $('.dataTables_length').addClass('bs-select');
 });
 </script>
 <script>
-$(document).ready(function () {
+  $(document).ready(function () {
 $('.stepper').mdbStepper();
 })
 
@@ -233,7 +230,7 @@ $('#horizontal-stepper-fix').nextStep();
 }
 </script>
 <script>
-// SideNav Initialization
+  // SideNav Initialization
 $(".button-collapse").sideNav();
 
 new WOW().init();

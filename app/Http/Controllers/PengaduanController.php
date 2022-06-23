@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pengaduan;
 use App\jenis;
-use App\santri;
+use App\Pengguna;
 use DB;
 use RealRashid\SweetAlert\Facades\Alert;
 use Validator, Redirect, Response, File;
@@ -128,7 +128,7 @@ class PengaduanController extends Controller
         $gambar = Pengaduan::where('id', $id)->first();
 
         if (!empty(request()->foto)) {
-            File::delete('img/'.$gambar->file);
+            File::delete('img/' . $gambar->file);
             request()->validate(['foto' => 'image|mimes:jpeg,png,jpg|max:2048',]);
             $namaFile = time() . '.' . request()->foto->extension();
             request()->foto->move(public_path('img'), $namaFile);

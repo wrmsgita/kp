@@ -14,7 +14,8 @@ class Pengguna1Controller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { }
+    {
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -81,7 +82,7 @@ class Pengguna1Controller extends Controller
         DB::table('users')->where('id', $id)->update([
             'name' => $request->name,
             'email' => $request->email,
-            'nisn' => $request->nisn,
+            'nik' => $request->nisn,
             'password' => $request->password,
             'role' => $request->role,
             'foto' => $namaFile

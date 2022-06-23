@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Santri;
+use App\Pengguna;
 use App\Asal;
 use PDF;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -24,18 +24,18 @@ class SantriController extends Controller
         if (session('success_message')) {
             Alert::success('Berhasil  ', session('success_message'));
         };
-        $santri = DB::table('santri')
-            ->join('kategori', 'santri.kategori_id', '=', 'kategori.id')
-            ->join('asal', 'santri.asal_id', '=', 'asal.id')
-            ->select('santri.*', 'santri.id', 'santri.nis', 'santri.nama', 'asal.nama AS asal', 'kategori.nama AS kategori', 'santri.kelas', 'santri.foto')->get();
-        
-        return view('santri.index', compact('santri'));
+        $santri = DB::table('pengguna')
+            ->join('kategori', 'pengguna.kategori_id', '=', 'kategori.id')
+            ->join('asal', 'pengguna.asal_id', '=', 'asal.id')
+            ->select('pengguna.*', 'pengguna.id', 'pengguna.nokk', 'pengguna.nama', 'asal.nama AS asal', 'kategori.nama AS kategori', 'pengguna.kelas', 'pengguna.foto')->get();
+
+        return view('pengguna.index', compact('santri'));
     }
 
     public function cetakpdf()
     {
-        $santri = Santri::all();
-        $pdf = PDF::loadview('santri.cetakpdf', compact('santri'));
+        $santri = Pengguna::all();
+        $pdf = PDF::loadview('pengguna.cetakpdf', compact('santri'));
         return $pdf->stream('datasantri.pdf');
     }
 
@@ -71,25 +71,27 @@ class SantriController extends Controller
             $namaFile = time() . '.' . request()->foto->extension();
             request()->foto->move(public_path('img'), $namaFile);
         } else {
-            $namaFile =null;
+            $namaFile = null;
         }
 
-            DB::table('santri')->insert(
-                [
-                    'nis' => $request->nis,
-                    'nama' => $request->nama,
-                    'tmp_lahir' => $request->tempat,
-                    'tgl_lahir' => $request->tanggal,
-                    'asal_id' => $request->asal,
-                    'kategori_id' => $request->kategori,
-                    'kelas' => $request->kelas,
-                    'alamat' => $request->alamat,
-                    'hp' => $request->hp,
-                    'email' => $request->email,
-                    'foto' => $namaFile
-                ]); 
-                return redirect('/santri')->withSuccessMessage('Data Berhasil Dimasukkan');
-            }
+        DB::table('pengguna')->insert(
+            [
+                'nis' => $request->nis,
+                'nama' => $request->nama,
+                'tmp_lahir' => $request->tempat,
+                'tgl_lahir' => $request->tanggal,
+                'asal_id' => $request->asal,
+                'kategori_id' => $request->kategori,
+                'kelas' => $request->kelas,
+                'alamat' => $request->alamat,
+                'hp' => $request->hp,
+                'email' => $request->email,
+                'foto' => $namaFile
+            ]
+        );
+
+        return redirect('/santri')->withSuccessMessage('Data Berhasil Dimasukkan');
+    }
     /**
      * Display the specified resource.
      *
@@ -98,7 +100,7 @@ class SantriController extends Controller
      */
     public function show($id)
     {
-        $santri = Santri::find($id);
+        $santri = Pengguna::find($id);
         return view('santri.show', compact('santri'));
     }
 
@@ -110,7 +112,7 @@ class SantriController extends Controller
      */
     public function edit($id)
     {
-        $santri = Santri::where('id', $id)->get();
+        $santri = Pengguna::where('id', $id)->get();
         return view('santri/edit', compact('santri'));
     }
 
@@ -124,7 +126,7 @@ class SantriController extends Controller
     public function update(Request $request, $id)
     {
 
-        $gambar2 = Santri::where('id', $id)->first();
+        $gambar2 = Pengguna::where('id', $id)->first();
 
         if (!empty(request()->foto)) {
             request()->validate(['foto' => 'image|mimes:jpeg,png,jpg|max:2048',]);
@@ -134,7 +136,7 @@ class SantriController extends Controller
             $namaFile = $gambar2->foto;
         }
 
-        DB::table('santri')->where('id', $id)->update([
+        DB::table('pengguna')->where('id', $id)->update([
             'nis' => $request->nis,
             'nama' => $request->nama,
             'tmp_lahir' => $request->tempat,
@@ -158,7 +160,7 @@ class SantriController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('santri')->where('id', $id)->delete();
+        DB::table('pengguna')->where('id', $id)->delete();
         return redirect('/santri')->with('sukses', 'Data berhasil dihapus');
     }
 }

@@ -71,7 +71,7 @@ $judul = array('No','Nis','Nama','TTL','Action');
                 <tr>
                   <td>{{ $loop->iteration }}</td>
                   {{-- <td>{{ $s ->id }}</td> --}}
-                  <td>{{ $s ->nis }}</td>
+                  <td>{{ $s ->nokk }}</td>
                   <td>{{ $s ->nama }}</td>
                   <td>{{ $s ->tmp_lahir }}, {{ $s ->tgl_lahir }} </td>
                   {{-- <td>{{ $s ->asal }}</td> --}}

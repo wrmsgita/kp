@@ -81,12 +81,12 @@ class PenggunaController extends Controller
             $namaFile = time() . '.' . request()->foto->extension();
             request()->foto->move(public_path('img'), $namaFile);
         } else {
-            $namaFile = $gambar ->foto;
+            $namaFile = $gambar->foto;
         }
         DB::table('users')->where('id', $id)->update([
             'name' => $request->name,
             'email' => $request->email,
-            'nisn' => $request->nisn,
+            'nik' => $request->nisn,
             'password' => $request->password,
             'role' => $request->role,
             'foto' => $namaFile

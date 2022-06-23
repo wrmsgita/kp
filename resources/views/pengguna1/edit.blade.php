@@ -49,8 +49,8 @@
             <label for="materialSubscriptionFormEmail">Nama Pengguna</label>
             </div>
             <div class="md-form">
-              <input name="nisn" type="number" value="{{$pengguna->nisn}}" id="inputMDEx" class="form-control">
-            <label for="materialSubscriptionFormEmail">Nisn</label>
+              <input name="nisn" type="number" value="{{$pengguna->nik}}" id="inputMDEx" class="form-control">
+            <label for="materialSubscriptionFormEmail">NIK</label>
             </div>
             <div class="md-form">
             <input name="email" type="text" value="{{$pengguna ->email}}" id="inputMDEx" class="form-control">
